@@ -1,0 +1,61 @@
+{{>boton-nuevo-cliente}}
+<div class="row">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cédula</th>
+                <th scope="col">Tel. Móvil</th>
+                <th scope="col">Correo Electrónico</th>
+                <th scope="col">Tel. Referencia</th>
+                <th scope="col">Tel. Referencia</th>
+                <th scope="col">Artículos</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each clientes}}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{nombre}}</td>
+                <td>{{ci}}</td>
+                <td>
+                    {{#each infoContacto}}
+                    {{movil}}
+                    {{/each}}
+                </td>
+                <td>
+                    {{#each infoContacto}}
+                    {{email}}
+                    {{/each}}
+                </td>
+                <td>
+                    {{#each infoContacto}}
+                    {{referencia1}}
+                    {{/each}}
+                </td>
+                <td>
+                    {{#each infoContacto}}
+                    {{referencia2}}
+                    {{/each}}
+                </td>
+                <td>
+                    <a href="/clientes/editar/{{_id}}">
+                        <i class="btn btn-info btn-sm fa fa-eye"></i>
+                    </a>
+                </td>
+                <td>
+                    {{>boton-editar-cliente}}
+                </td>
+                <td>
+                    <a href="/clientes/eliminar/{{_id}}">
+                        <i class="btn btn-danger btn-sm fa fa-trash-o"></i>
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
