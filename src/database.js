@@ -6,7 +6,8 @@ const MONGODB_URI = `mongodb://${ELECTROBOL_MONGODB_HOST}/${ELECTROBOL_MONGODB_D
 
 mongoose.connect(MONGODB_URI, {
         useUnifiedTopology: true,
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useFindAndModify: false
     })
     .then(db => console.log('Database is connected'))
     .catch(err => console.log(err));

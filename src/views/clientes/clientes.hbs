@@ -42,15 +42,17 @@
                     {{/each}}
                 </td>
                 <td>
-                    <a href="/clientes/editar/{{_id}}">
-                        <i class="btn btn-info btn-sm fa fa-eye"></i>
+                    <a href="/articulos/nuevo/{{_id}}">
+                        <i class="btn btn-info btn-sm fa fa-plus-square"></i>
                     </a>
                 </td>
                 <td>
-                    {{>boton-editar-cliente}}
+                    <a href="/clientes/editar/{{_id}}">
+                        <i class="btn btn-success btn-sm fa fa-pencil-square-o"></i>
+                    </a>
                 </td>
                 <td>
-                    <a href="/clientes/eliminar/{{_id}}">
+                    <a href="/clientes/eliminar/{{_id}}?_method=PUT">
                         <i class="btn btn-danger btn-sm fa fa-trash-o"></i>
                     </a>
                 </td>

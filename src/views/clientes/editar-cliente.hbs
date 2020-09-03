@@ -1,29 +1,45 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
-            </div>
+<div class="col-md-8 mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Editar Cliente</h3>
+        </div>
+        <div class="card-body">
+            <form action="/clientes/editar/{{cliente.id}}?_method=PUT" method="post">
+                <input type="hidden" name="method" value="PUT">
+                <div class="form-group">
+                    <label class="control-label pull-left" for="nombre">Nombre del cliente</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control" value="{{cliente.nombre}}" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label pull-left" for="ci">Cédula del cliente</label>
+                    <input type="text" name="ci" id="ci" class="form-control" value="{{cliente.ci}}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label pull-left" for="movil">Teléfono celular</label>
+                    <input type="tel" name="movil" id="movil" class="form-control"
+                        value="{{#each cliente.infoContacto}}{{movil}}{{/each}}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label pull-left" for="email">Dirección de correo electrónico</label>
+                    <input type="email" name="email" id="email" class="form-control"
+                        value="{{#each cliente.infoContacto}}{{email}}{{/each}}">
+                </div>
+                <div class="form-group">
+                    <label for="referencia1" class="control-label pull-left">Primer contacto de referencia</label>
+                    <input type="tel" name="referencia1" id="referencia1" class="form-control"
+                        value="{{#each cliente.infoContacto}}{{referencia1}}{{/each}}">
+                </div>
+                <div class="form-group">
+                    <label for="referencia2" class="control-label pull-left">Segundo contacto de referencia</label>
+                    <input type="tel" name="referencia2" id="referencia2" class="form-control"
+                        value="{{#each cliente.infoContacto}}{{referencia2}}{{/each}}">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">
+                        Guardar
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

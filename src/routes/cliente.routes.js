@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const { renderClienteForm, crearNuevoCliente, renderClientesTodos, editarCliente, eliminarCliente, renderFormEditar, redireccionar } = require('../controllers/cliente.controller')
+const { crearNuevoCliente, renderClientesTodos, editarCliente, eliminarCliente, renderFormEditar, redireccionar, renderEliminarCliente } = require('../controllers/cliente.controller')
 
 //nuevo cliente
 router.get('/clientes/nuevo', redireccionar);

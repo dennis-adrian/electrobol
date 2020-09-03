@@ -3,8 +3,9 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const { join } = require('path');
 const morgan = require('morgan');
-const Handlebars = require('handlebars')
-const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
+const Handlebars = require('handlebars');
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
+const methodOverride = require('method-override');
 
 //==================================Initializations
 const app = express();
@@ -27,7 +28,7 @@ app.set('view engine', '.hbs');
 //every time we get data from a form, this middleware converts it to a json format
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
-
+app.use(methodOverride('_method'));
 //==================================Global Variables
 
 //==================================Routes
