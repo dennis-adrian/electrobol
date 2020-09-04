@@ -1,4 +1,19 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, SchemaTypes } = require('mongoose');
+
+var Reparacion = new Schema({
+    estado: {
+        type: String
+    },
+    resultadoEvaluacion: {
+        type: String
+    },
+    duracionEstimada: {
+        type: String
+    },
+    precio: {
+        type: Number
+    }
+});
 
 const ArticuloSchema = new Schema({
     tipo: {
@@ -13,20 +28,18 @@ const ArticuloSchema = new Schema({
         type: String,
         required: true
     },
-    modelo: {
-        type: String,
-        required: true
-    },
     garantiaVigente: {
         type: Boolean,
         required: true
     },
-    problema: {
-        type: String
+    idCliente: {
+        type: Schema.Types.ObjectId,
+        ref: 'Cliente'
     },
+    reparacion: [Reparacion],
     estadoEnBd: {
         type: Boolean
-    }
+    },
 }, {
     timestamps: true
 });

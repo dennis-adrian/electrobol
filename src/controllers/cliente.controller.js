@@ -22,7 +22,6 @@ clienteCtrl.renderCliente = (req, res) => {
 }
 clienteCtrl.renderClientesTodos = async(req, res) => {
     const clientes = await Cliente.find({ estadoEnBd: true }).sort({ _id: 'desc' });
-
     res.render('clientes/clientes', { clientes })
 }
 clienteCtrl.renderFormEditar = async(req, res) => {

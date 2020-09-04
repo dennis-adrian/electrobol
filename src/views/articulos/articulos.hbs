@@ -1,0 +1,22 @@
+<div class="d-flex flex-row flex-wrap">
+    {{#each articulos}}
+    <div class="col-md-4 mx-auto">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h4>Artículo {{ @index}} - {{tipo}}</h4>
+            </div>
+            <div class="card-body">
+                <h5><b>Marca: </b>{{marca}}</h5>
+                <h5><b>Color: </b>{{color}}</h5>
+                <h5><b>Garantía: </b>
+                    {{#if garantiaVigente}}
+                    Vigente
+                    {{else}}
+                    Vencida
+                    {{/if}}</h5>
+                <h5><b>Problema</b></h5>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

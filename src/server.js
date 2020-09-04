@@ -34,6 +34,7 @@ app.use(methodOverride('_method'));
 //==================================Routes
 app.use(require('./routes/index.routes'));
 app.use(require('./routes/cliente.routes'));
-//==================================Static Files
+app.use(require('./routes/articulo.routes'))
+    //==================================Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 module.exports = app;

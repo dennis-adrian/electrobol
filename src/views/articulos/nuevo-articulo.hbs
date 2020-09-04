@@ -1,0 +1,40 @@
+<div class="d-flex flex-row flex-wrap">
+    <div class="col-md-6 mx-auto">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h4>Artículo</h4>
+            </div>
+            <div class="card-body">
+                <form action="/articulos/nuevo" method="post">
+                    <input type="hidden" name="idCliente" value="{{cliente.id}}">
+                    <div class="form-group">
+                        <label class="control-label pull-left" for="tipo">Tipo de articulo</label>
+                        <input type="text" class="form-control" name="tipo" id="tipo"
+                            placeholder="Ingrese el tipo de articulo" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label pull-left" for="marca">Marca del articulo</label>
+                        <input type="text" class="form-control" name="marca" id="marca"
+                            placeholder="Ingrese la marca del articulo">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label pull-left" for="color">Color del articulo</label>
+                        <input type="text" class="form-control" name="color" id="color"
+                            placeholder="Ingrese el color del articulo">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label pull-left" for="modelo">Garantía del articulo</label>
+                        <select class="form-control" name="garantiaVigente" id="garantiaVigente">
+                            <option value="true">Vigente</option>
+                            <option value="false">Vencida</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
